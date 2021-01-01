@@ -4,7 +4,7 @@ class Blog extends Component {
     state = {showBlogForm: false}
 
     render() {
-        const {title, date_posted, complete, id} = this.props
+        const {title, complete,} = this.props
         return(
             <>
             <h1>{title} complete:{complete ? "true" : "false"}</h1>

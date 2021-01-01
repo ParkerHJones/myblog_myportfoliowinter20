@@ -1,4 +1,6 @@
 class Api::BlogsController < ApplicationController
+    
+    
     def index 
     render json: Blog.all
     end 
@@ -17,7 +19,7 @@ class Api::BlogsController < ApplicationController
 
     def update 
       @blog = Blog.find(params[:id])
-      if @todo.update(todo_params)
+      if @todo.update(blog_params)
     
       else 
         render json: { errors: @blog.errors }, status: :unprocessable_entity

@@ -32,7 +32,19 @@ class App extends Component {
   }
 
   updateBlog = (id, incomingBlog) => {
-
+    axios.put(`/api/blogs/${id}`, { blog })
+    .then(res => {
+      const blogs = this.state.blogs.map( b => {
+        if (b.id ===id ){
+          return res.data
+        }
+        return b
+      })
+      this.setState({ blogs: blogs })
+    })
+    .catch( err => {
+      console.log(err);
+    })
   }
 
   removeBlog = (id) => {
