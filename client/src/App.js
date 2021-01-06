@@ -1,66 +1,33 @@
-import { Component } from 'react';
-import { Container } from 'semantic-ui-react';
-import axios from 'axios';
-import BlogList from './components/blogs/BlogList';
-import BlogForm from './components/blogs/BlogForm';
+// import logo from './logo.svg';
+import React from 'react'; 
+import './App.css';
+import Home from './containers/Home';
+import Header from './components/Header';
+import Hero from './components/Hero/index';
+import AboutMe from './containers/AboutMe';
+import programming_portfolio from './containers/ProgrammingPortfolio';
+import Blogdisplay from './containers/Blogdisplay/Index';
+// import Card from './components/UI/Card'; 
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-class App extends Component {
-  state = { blogs: [] }
+function App() {
+  return (
 
-  componentDidMount() {
-    axios.get('/api/blogs')
-    .then( res => {
-      // debugger
-      this.setState({ blogs: res.data })
-    })
-    .catch( err => {
-      console.log(err);
-    })
-  }
+    <Router>
+      <div className="App">
+      <Header />
+      <Hero />
 
-  addBlog = (blog) => {
-    axios.post('/api/blogs', { blog })
-    .then(res => {
-      const { blogs } = this.state
-      this.setState({ blogs: [...blogs, res.data ]})
+      <Route path="/" exact component={Home}/>
+      <Route path="/AboutMe" component={AboutMe}/>
+      <Route path="/programmingportfolio" component={programming_portfolio}/>
+      <Route path="/Blogdisplay" component={Blogdisplay}/>
 
-    })
-    .catch( err => {
-      console.log(err);
-    })
+    </div>
 
-  }
-
-  updateBlog = (id, incomingBlog) => {
-    axios.put(`/api/blogs/${id}`, { blog })
-    .then(res => {
-      const blogs = this.state.blogs.map( b => {
-        if (b.id ===id ){
-          return res.data
-        }
-        return b
-      })
-      this.setState({ blogs: blogs })
-    })
-    .catch( err => {
-      console.log(err);
-    })
-  }
-
-  removeBlog = (id) => {
-
-  }
-
-  render () {
-    const { blogs } = this.state
-    return (
-      <Container> 
-        <BlogForm addBlog={this.addBlog} />
-        <BlogList blogs={blogs} />
-
-      </Container> 
-    )
-  }
+      </Router>
+    
+  );
 }
 
 export default App;
