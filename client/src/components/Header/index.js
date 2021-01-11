@@ -11,7 +11,7 @@ import React from 'react';
      return(
          <header className="header">
              <nav className="headerMenu">
-                <p> "Guard your heart for everything you do flows from it."</p>
+                <p> "Parker Jones."</p>
                  </nav>
          </header>
      )

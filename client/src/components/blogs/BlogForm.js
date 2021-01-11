@@ -23,7 +23,7 @@ class BlogForm extends Component {
       updateBlog(id, this.state )
       toggleEdit()
     } else {
-      this.props.addBlog(this.state)
+    //   this.props.addBlog(this.state)
     }
     this.setState({ title: '' })
   }

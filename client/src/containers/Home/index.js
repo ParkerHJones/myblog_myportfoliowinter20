@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
-
+import Hero from '../../components/Hero';
 
 /**
  * @author
@@ -9,8 +9,11 @@ import Header from '../../components/Header';
 
 const Home = props => {
     return (
+        
         <div>
             About Me
+            <br></br>
+            <br></br>
             <p>  My name is Parker Jones, I am 25 years old. 
                 <br></br>
                 <br></br>
@@ -21,6 +24,8 @@ const Home = props => {
                 <br></br>
                 <br></br>
                 Bilingual in Spanish
+                <br></br>
+                <br></br>
              </p> 
 
             

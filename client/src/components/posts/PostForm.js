@@ -47,13 +47,6 @@ class PostForm extends Component {
           label='Text'
           type="text" 
         />
-        <Form.Input
-          name='pic'
-          value={pic}
-          onChange={this.handleChange}
-          required
-          label='Picture'
-        />
         <Form.Button>
           Submit
         </Form.Button>

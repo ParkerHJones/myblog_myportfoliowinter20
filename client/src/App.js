@@ -18,7 +18,8 @@ const App = () => (
 <>
 <Navbar />
     <Switch>
-
+  
+  
 
       <Route exact path="/" exact component={Home}/>
       <Route exact path="/AboutMe" component={AboutMe}/>
