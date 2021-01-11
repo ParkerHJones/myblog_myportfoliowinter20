@@ -9,6 +9,7 @@ import programming_portfolio from './containers/ProgrammingPortfolio';
 import Blogdisplay from './containers/Blogdisplay/Index';
 import Blog from './components/blogs/Blog';
 import Navbar from './components/Navbar/index';
+import Work from './containers/Work';
 
 
 // import Card from './components/UI/Card'; 
@@ -26,6 +27,7 @@ const App = () => (
       <Route exact path="/programmingportfolio" component={programming_portfolio}/>
       <Route exact path="/Blogdisplay" component={Blogdisplay}/>
       <Route exact path ='/blog/:id' component={Blog} />
+      <Route exact path ="/Work"  component={Work} />
     
 
     </Switch>
