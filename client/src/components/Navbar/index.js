@@ -29,7 +29,7 @@ import {NavLink} from 'react-router-dom';
             <ul className="navbarMenu">
                 <li><NavLink to="/">AboutMe</NavLink></li>
                 <li><NavLink to="/programmingportfolio">Programming Portfolio</NavLink></li>
-                <li><NavLink to="Blog">Blog</NavLink></li>
+                <li><NavLink to="/Blogdisplay">Blog</NavLink></li>
             </ul>
             {/* <div className="search">
                 <form onSubmit={submitSearch}>

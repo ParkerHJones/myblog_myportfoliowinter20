@@ -4,11 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
+import { BrowserRouter } from 'react-router-dom';
+import BlogProvider from './providers/BlogProvider';
+import PostProvider from './providers/PostProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    
+    <BlogProvider>
+      <PostProvider>
+        <BrowserRouter>
+        <App />
+      </BrowserRouter>
+      </PostProvider>
+    </BlogProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
